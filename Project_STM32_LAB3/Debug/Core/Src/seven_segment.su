@@ -1,0 +1,7 @@
+seven_segment.c:33:6:display7SEG	32	static
+seven_segment.c:43:6:init7SEG	8	static
+seven_segment.c:54:6:setTime7SEG	16	static
+seven_segment.c:60:6:update7SEGBuffer1	4	static
+seven_segment.c:65:6:handleTime1	8	static
+seven_segment.c:78:6:update7SEG	16	static
+seven_segment.c:106:6:run_seven_segment	8	static

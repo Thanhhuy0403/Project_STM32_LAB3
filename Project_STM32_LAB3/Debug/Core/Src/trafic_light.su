@@ -1,0 +1,10 @@
+trafic_light.c:14:6:onLedRed1	8	static
+trafic_light.c:20:6:onLedAmber1	8	static
+trafic_light.c:26:6:onLedGreen1	8	static
+trafic_light.c:32:6:onLedRed2	8	static
+trafic_light.c:38:6:onLedAmber2	8	static
+trafic_light.c:44:6:onLedGreen2	8	static
+trafic_light.c:50:6:offALL1	8	static
+trafic_light.c:56:6:offALL2	8	static
+trafic_light.c:63:6:togglelLed	16	static
+trafic_light.c:89:6:runTraficLight1	8	static
