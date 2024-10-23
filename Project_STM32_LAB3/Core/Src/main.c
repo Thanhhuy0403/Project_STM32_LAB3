@@ -101,6 +101,8 @@ int main(void)
   while (1)
   {
 	  runTraficLight1();
+	  runTraficLight2();
+
 	  run_handleMode();
 	  if(timer_flag[3] == 1){
 		  setTimer(3, 100);

@@ -29,8 +29,9 @@
  * timer_flag[1]: button mode
  * timer_flag[2]: toggle led
  * timer_flag[3]: display 7SEG
- * timer_flag[4]: handle time 7SEG
+ * timer_flag[4]: handle time 1 7SEG
  * timer_flag[5]: trafic_light 2
+ * timer_flag[6]: handle time 2 7SEG
  * */
 
 extern int status;
