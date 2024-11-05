@@ -97,7 +97,7 @@ int main(void)
   status = INIT;
   initButton();
   init7SEG();
-  setTimer(3, 100); 	// Timer display 7SEG
+  setTimer(3, 500); 	// Timer display 7SEG
   while (1)
   {
 	  runTraficLight1();
@@ -105,7 +105,7 @@ int main(void)
 
 	  run_handleMode();
 	  if(timer_flag[3] == 1){
-		  setTimer(3, 100);
+		  setTimer(3, 500);
 		  run_seven_segment();
 	  }
     /* USER CODE END WHILE */
