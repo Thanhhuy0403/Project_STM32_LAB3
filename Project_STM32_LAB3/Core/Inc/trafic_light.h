@@ -15,6 +15,12 @@ typedef enum {
 	LED_OFF
 } LedStateToggle;
 
+typedef enum {
+    LED_RED,
+	LED_AMBER,
+	LED_GREEN
+} ledType;
+
 extern int durationLedRed;
 extern int durationLedAmber;
 extern int durationLedGreen;
@@ -28,7 +34,7 @@ void onLedGreen2();
 void offALL1();
 void offALL2();
 
-void togglelLed(int duration); // duration giua cac led voi nhau
+void togglelLed(int duration, ledType led); // duration giua cac led voi nhau
 
 void runTraficLight1();
 void runTraficLight2();

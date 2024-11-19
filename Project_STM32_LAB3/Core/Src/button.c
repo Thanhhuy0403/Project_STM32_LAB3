@@ -92,7 +92,7 @@ void run_handleMode(){
 			}
 			break;
 		case MODE_1:
-			togglelLed(200);
+			togglelLed(200, LED_RED);
 			led_buffer[2] = 0;
 			led_buffer[3] = 1;
 			if(timer_flag[1] == 1 || isButtonPressed(2)){
@@ -118,7 +118,7 @@ void run_handleMode(){
 			}
 			break;
 		case MODE_2:
-			togglelLed(200);
+			togglelLed(200, LED_GREEN);
 			led_buffer[2] = 0;
 			led_buffer[3] = 2;
 			if(timer_flag[1] == 1 || isButtonPressed(2)){
@@ -143,7 +143,7 @@ void run_handleMode(){
 			}
 			break;
 		case MODE_3:
-			togglelLed(200);
+			togglelLed(200, LED_AMBER);
 			led_buffer[2] = 0;
 			led_buffer[3] = 3;
 			if(timer_flag[1] == 1 || isButtonPressed(2)){

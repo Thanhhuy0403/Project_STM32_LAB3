@@ -14,6 +14,7 @@
 #include "trafic_light.h"
 #include "button.h"
 #include "seven_segment.h"
+#include "scheduler.h"
 
 #define INIT				0
 #define AUTO_LED_RED		1

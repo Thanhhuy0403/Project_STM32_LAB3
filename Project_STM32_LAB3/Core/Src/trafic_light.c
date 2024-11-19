@@ -60,27 +60,48 @@ void offALL2(){
 }
 
 LedStateToggle currentLed = LED_ON;
-void togglelLed(int duration){
+void togglelLed(int duration, ledType led){
 	switch (currentLed) {
+
 		case LED_ON:
-			HAL_GPIO_WritePin(LED_RED1_GPIO_Port, LED_RED1_Pin, 0);
-			HAL_GPIO_WritePin(LED_AMBER1_GPIO_Port, LED_AMBER1_Pin, 0);
-			HAL_GPIO_WritePin(LED_GREEN1_GPIO_Port, LED_GREEN1_Pin, 0);
-			HAL_GPIO_WritePin(LED_RED2_GPIO_Port, LED_RED2_Pin, 1);
-			HAL_GPIO_WritePin(LED_AMBER2_GPIO_Port, LED_AMBER2_Pin, 1);
-			HAL_GPIO_WritePin(LED_GREEN2_GPIO_Port, LED_GREEN2_Pin, 1);
+			if(led == LED_RED){
+				HAL_GPIO_WritePin(LED_RED1_GPIO_Port, LED_RED1_Pin, 0);
+				HAL_GPIO_WritePin(LED_RED2_GPIO_Port, LED_RED2_Pin, 0);
+				HAL_GPIO_WritePin(LED_AMBER1_GPIO_Port, LED_AMBER1_Pin, 1);
+				HAL_GPIO_WritePin(LED_AMBER2_GPIO_Port, LED_AMBER2_Pin, 1);
+				HAL_GPIO_WritePin(LED_GREEN1_GPIO_Port, LED_GREEN1_Pin, 1);
+				HAL_GPIO_WritePin(LED_GREEN2_GPIO_Port, LED_GREEN2_Pin, 1);
+			}else if(led == LED_AMBER){
+				HAL_GPIO_WritePin(LED_RED1_GPIO_Port, LED_RED1_Pin, 1);
+				HAL_GPIO_WritePin(LED_RED2_GPIO_Port, LED_RED2_Pin, 1);
+				HAL_GPIO_WritePin(LED_AMBER1_GPIO_Port, LED_AMBER1_Pin, 0);
+				HAL_GPIO_WritePin(LED_AMBER2_GPIO_Port, LED_AMBER2_Pin, 0);
+				HAL_GPIO_WritePin(LED_GREEN1_GPIO_Port, LED_GREEN1_Pin, 1);
+				HAL_GPIO_WritePin(LED_GREEN2_GPIO_Port, LED_GREEN2_Pin, 1);
+			}else{
+				HAL_GPIO_WritePin(LED_RED1_GPIO_Port, LED_RED1_Pin, 1);
+				HAL_GPIO_WritePin(LED_RED2_GPIO_Port, LED_RED2_Pin, 1);
+				HAL_GPIO_WritePin(LED_AMBER1_GPIO_Port, LED_AMBER1_Pin, 1);
+				HAL_GPIO_WritePin(LED_AMBER2_GPIO_Port, LED_AMBER2_Pin, 1);
+				HAL_GPIO_WritePin(LED_GREEN1_GPIO_Port, LED_GREEN1_Pin, 0);
+				HAL_GPIO_WritePin(LED_GREEN2_GPIO_Port, LED_GREEN2_Pin, 0);
+			}
 			if(timer_flag[2] == 1){
 				currentLed = LED_OFF;
 				setTimer(2, duration);
 			}
 			break;
 		case LED_OFF:
-			HAL_GPIO_WritePin(LED_RED1_GPIO_Port, LED_RED1_Pin, 1);
-			HAL_GPIO_WritePin(LED_AMBER1_GPIO_Port, LED_AMBER1_Pin, 1);
-			HAL_GPIO_WritePin(LED_GREEN1_GPIO_Port, LED_GREEN1_Pin, 1);
-			HAL_GPIO_WritePin(LED_RED2_GPIO_Port, LED_RED2_Pin, 0);
-			HAL_GPIO_WritePin(LED_AMBER2_GPIO_Port, LED_AMBER2_Pin, 0);
-			HAL_GPIO_WritePin(LED_GREEN2_GPIO_Port, LED_GREEN2_Pin, 0);
+			if(led == LED_RED){
+				HAL_GPIO_WritePin(LED_RED1_GPIO_Port, LED_RED1_Pin, 1);
+				HAL_GPIO_WritePin(LED_RED2_GPIO_Port, LED_RED2_Pin, 1);
+			}else if(led == LED_AMBER){
+				HAL_GPIO_WritePin(LED_AMBER1_GPIO_Port, LED_AMBER1_Pin, 1);
+				HAL_GPIO_WritePin(LED_AMBER2_GPIO_Port, LED_AMBER2_Pin, 1);
+			}else{
+				HAL_GPIO_WritePin(LED_GREEN1_GPIO_Port, LED_GREEN1_Pin, 1);
+				HAL_GPIO_WritePin(LED_GREEN2_GPIO_Port, LED_GREEN2_Pin, 1);
+			}
 			if(timer_flag[2] == 1){
 				currentLed = LED_ON;
 				setTimer(2, duration);
