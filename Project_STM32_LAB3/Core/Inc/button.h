@@ -19,6 +19,6 @@ int isButtonPressed(int index);
 void initButton();
 void getKeyInput();
 
-void run_handleMode();
+//void run_handleMode();
 
 #endif /* INC_BUTTON_H_ */

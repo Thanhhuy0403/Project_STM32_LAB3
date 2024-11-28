@@ -97,22 +97,14 @@ int main(void)
   status = INIT;
   initButton();
   init7SEG();
-  setTimer(3, 500); 	// Timer display 7SEG
+//  setTimer(3, 500); 	// Timer display 7SEG
   SCH_Init();
-  SCH_Add_Task(runTraficLight1, 0, 100);
-  SCH_Add_Task(runTraficLight2, 50, 100);
-  SCH_Add_Task(run_handleMode, 100, 100);
+  SCH_Add_Task(fsm_automatic1, 0, 100);
+  SCH_Add_Task(fsm_automatic2, 50, 100);
+  SCH_Add_Task(fsm_manual, 100, 100);
   SCH_Add_Task(run_seven_segment, 150, 500);
   while (1)
   {
-//	  runTraficLight1();
-//	  runTraficLight2();
-//
-//	  run_handleMode();
-//	  if(timer_flag[3] == 1){
-//		  setTimer(3, 500);
-//		  run_seven_segment();
-//	  }
 	  SCH_Dispatch_Tasks();
     /* USER CODE END WHILE */
 

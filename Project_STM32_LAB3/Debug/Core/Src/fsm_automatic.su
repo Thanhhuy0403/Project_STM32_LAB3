@@ -1,0 +1,11 @@
+fsm_automatic.c:14:6:onLedRed1	8	static
+fsm_automatic.c:20:6:onLedAmber1	8	static
+fsm_automatic.c:26:6:onLedGreen1	8	static
+fsm_automatic.c:32:6:onLedRed2	8	static
+fsm_automatic.c:38:6:onLedAmber2	8	static
+fsm_automatic.c:44:6:onLedGreen2	8	static
+fsm_automatic.c:50:6:offALL1	8	static
+fsm_automatic.c:56:6:offALL2	8	static
+fsm_automatic.c:63:6:togglelLed	16	static
+fsm_automatic.c:115:6:fsm_automatic1	8	static
+fsm_automatic.c:161:6:fsm_automatic2	8	static
