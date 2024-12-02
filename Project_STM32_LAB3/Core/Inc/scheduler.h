@@ -8,23 +8,35 @@
 #ifndef INC_SCHEDULER_H_
 #define INC_SCHEDULER_H_
 
+#include "main.h"
+#include <stdio.h>
+#include <stdlib.h>
 #include <stdint.h>
 
 typedef struct{
 	void (*pTask)(void);
-	uint32_t 	Delay;
-	uint32_t 	Period;
-	uint8_t		RunMe;
-	uint32_t	TaskID;
-}sTasks;
+	uint32_t Delay;
+	uint32_t Period;
+	uint32_t RunMe;
+	uint32_t TaskID;
+} sTask;
 
-#define SCH_MAX_TASKS		40
-#define TICH 				10
+struct Node{
+	sTask data;
+	struct Node *next;
+};
 
-void SCH_Init(void);
-void SCH_Add_Task(void (*pFuncion)(), uint32_t Delay, uint32_t Period);
-void SCH_Update(void);
+#define TICH	10
+
+struct Node *createNode(sTask data);
+void AddTask(struct Node **head, sTask data);
+void DeleteTaskID(struct Node **head, uint32_t taskID);
+void DeleteTask(struct Node **head);
+
+void SCH_Init();
+void SCH_Add_Task(void (*pTask)(), uint32_t Delay, uint32_t Period);
 void SCH_Dispatch_Tasks(void);
-void SCH_Delete(uint32_t ID);
+void SCH_Update(void);
+void SCH_Delete_Task(uint32_t taskID);
 
 #endif /* INC_SCHEDULER_H_ */
